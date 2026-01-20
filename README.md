@@ -6,8 +6,8 @@ Run Trustee guest components (AA, CDH, ASR) as systemd-managed containers on RHE
 # Install the package
 dnf install trustee-gc-quadlet
 
-# Pull the container image
-podman pull quay.io/litian/trustee-gc:latest
+# Login quay.io in order to pull container images
+podman login quay.io
 
 # Configure
 vi /etc/trustee-gc/aa/config.toml
