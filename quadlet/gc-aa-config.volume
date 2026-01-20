@@ -1,0 +1,6 @@
+# AA Configuration Volume
+
+[Volume]
+Label=app=trustee-gc
+Label=component=aa
+Label=type=config

@@ -1,0 +1,37 @@
+# Trustee Attestation Agent (AA)
+
+[Unit]
+Description=Trustee Attestation Agent service
+
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=quay.io/litian/trustee-gc-aa:latest
+ContainerName=trustee-gc-aa
+Network=trustee-gc.network
+ExposeHostPort=50002
+Volume=/etc/trustee-gc/aa:/etc/aa:ro,Z
+Environment=RUST_LOG=info
+
+[Service]
+# Restart policy
+Restart=on-failure
+RestartSec=10s
+
+# Startup/shutdown timeouts
+TimeoutStartSec=90s
+TimeoutStopSec=30s
+
+# systemd hardening
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=trustee-gc-aa
+
+[Install]
+WantedBy=multi-user.target default.target
