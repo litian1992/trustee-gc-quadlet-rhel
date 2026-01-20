@@ -12,6 +12,7 @@ Image=quay.io/litian/trustee-gc-asr:latest
 ContainerName=trustee-gc-asr
 Network=trustee-gc.network
 ExposeHostPort=8006
+Volume=cdh-sock:/run/confidential-containers:Z
 Environment=RUST_LOG=info
 
 [Service]
@@ -22,11 +23,6 @@ RestartSec=10s
 # Startup/shutdown timeouts
 TimeoutStartSec=90s
 TimeoutStopSec=30s
-
-# systemd hardening
-ProtectSystem=strict
-ProtectHome=yes
-PrivateTmp=yes
 
 # Logging
 StandardOutput=journal
