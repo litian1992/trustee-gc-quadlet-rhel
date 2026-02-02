@@ -8,11 +8,9 @@ Wants=network-online.target
 
 [Container]
 Image=quay.io/litian/trustee-gc-aa:latest
+Pod=trustee-gc.pod
 ContainerName=trustee-gc-aa
-Network=trustee-gc.network
-ExposeHostPort=50002
 Volume=/etc/trustee-gc/aa:/etc/aa:ro,Z
-Volume=aa-sock:/run/confidential-containers/attestation-agent:Z
 AddDevice=/dev/tpm0
 Environment=RUST_LOG=info
 

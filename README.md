@@ -14,9 +14,7 @@ vi /etc/trustee-gc/aa/config.toml
 vi /etc/trustee-gc/cdh/config.toml
 
 # Start services
-systemctl start trustee-gc-aa
-systemctl start trustee-gc-cdh
-systemctl start trustee-gc-asr
+systemctl start trustee-gc-pod
 ```
 
 ## Building RPM
