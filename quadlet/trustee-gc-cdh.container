@@ -8,11 +8,10 @@ Wants=network-online.target
 Requires=trustee-gc-aa.service
 
 [Container]
-Image=quay.io/litian/trustee-gc-cdh:latest
+Image=quay.io/litian/trustee-gc-cdh:0.15.0
 Pod=trustee-gc.pod
 ContainerName=trustee-gc-cdh
 Volume=/etc/trustee-gc/cdh:/etc/cdh:ro,Z
-Volume=gc-cdh-data.volume:/run/confidential-containers/cdh:Z
 Environment=RUST_LOG=info
 
 [Service]

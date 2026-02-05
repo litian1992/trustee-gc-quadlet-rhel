@@ -4,11 +4,7 @@ After=network.target
 
 [Pod]
 PodName=trustee-gc
-Network=trustee-gc.network
-PublishPort=8006:8006
-PublishPort=50002:50002
-#PublishPort=8080:8080
-#PublishPort=8443:8444
+Network=host
 # Shared Volume definitions
 Volume=cdh-sock:/run/confidential-containers:Z
 Volume=aa-sock:/run/confidential-containers/attestation-agent:Z

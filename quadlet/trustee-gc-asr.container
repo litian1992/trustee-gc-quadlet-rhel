@@ -8,10 +8,9 @@ Wants=network-online.target
 Requires=trustee-gc-cdh.service
 
 [Container]
-Image=quay.io/litian/trustee-gc-asr:latest
+Image=quay.io/litian/trustee-gc-asr:0.15.0
 Pod=trustee-gc.pod
 ContainerName=trustee-gc-asr
-Exec=--bind 0.0.0.0:8006
 Environment=RUST_LOG=info
 
 [Service]

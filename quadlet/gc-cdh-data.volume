@@ -1,6 +1,0 @@
-# CDH Data Volume
-
-[Volume]
-Label=app=trustee-gc
-Label=component=cdh
-Label=type=data

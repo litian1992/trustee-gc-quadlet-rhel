@@ -44,8 +44,6 @@ install -d %{buildroot}%{_sysconfdir}/trustee-gc/cdh
 # Install Quadlet files
 install -d %{buildroot}%{_datadir}/containers/systemd
 install -m 0644 quadlet/*.container %{buildroot}%{_datadir}/containers/systemd/
-install -m 0644 quadlet/*.volume %{buildroot}%{_datadir}/containers/systemd/
-install -m 0644 quadlet/*.network %{buildroot}%{_datadir}/containers/systemd/
 install -m 0644 quadlet/*.pod %{buildroot}%{_datadir}/containers/systemd/
 
 # Install default configurations
@@ -65,10 +63,6 @@ install -m 0644 configs/cdh/config.toml %{buildroot}%{_sysconfdir}/trustee-gc/cd
 %{_datadir}/containers/systemd/trustee-gc-aa.container
 %{_datadir}/containers/systemd/trustee-gc-cdh.container
 %{_datadir}/containers/systemd/trustee-gc-asr.container
-%{_datadir}/containers/systemd/gc-aa-config.volume
-%{_datadir}/containers/systemd/gc-cdh-config.volume
-%{_datadir}/containers/systemd/gc-cdh-data.volume
-%{_datadir}/containers/systemd/trustee-gc.network
 %{_datadir}/containers/systemd/trustee-gc.pod
 
 %dir %{_sysconfdir}/trustee-gc

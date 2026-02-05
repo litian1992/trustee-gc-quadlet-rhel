@@ -7,7 +7,7 @@ After=network-online.target
 Wants=network-online.target
 
 [Container]
-Image=quay.io/litian/trustee-gc-aa:latest
+Image=quay.io/litian/trustee-gc-aa:0.15.0
 Pod=trustee-gc.pod
 ContainerName=trustee-gc-aa
 Volume=/etc/trustee-gc/aa:/etc/aa:ro,Z
