@@ -11,6 +11,7 @@ Image=quay.io/litian/trustee-gc-aa:0.15.0
 Pod=trustee-gc.pod
 ContainerName=trustee-gc-aa
 Volume=/etc/trustee-gc/aa:/etc/aa:ro,Z
+#AddDevice=/dev/sev-guest
 AddDevice=/dev/tpm0
 Environment=RUST_LOG=info
 
@@ -20,8 +21,8 @@ Restart=on-failure
 RestartSec=10s
 
 # Startup/shutdown timeouts
-TimeoutStartSec=90s
-TimeoutStopSec=30s
+TimeoutStartSec=30s
+TimeoutStopSec=10s
 
 # Logging
 StandardOutput=journal

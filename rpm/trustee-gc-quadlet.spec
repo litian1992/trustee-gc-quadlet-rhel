@@ -51,6 +51,14 @@ install -m 0644 configs/aa/config.toml %{buildroot}%{_sysconfdir}/trustee-gc/aa/
 install -m 0644 configs/cdh/config.toml %{buildroot}%{_sysconfdir}/trustee-gc/cdh/
 
 %post
+# Toggle AddDevice=/dev/sev-guest in trustee-gc-aa.container based on availability
+AA_CONTAINER="%{_datadir}/containers/systemd/trustee-gc-aa.container"
+if [ -e /dev/sev-guest ]; then
+  sed -i 's/^#\(AddDevice=\/dev\/sev-guest\)/\1/' "$AA_CONTAINER"
+else
+  sed -i 's/^\(AddDevice=\/dev\/sev-guest\)/#\1/' "$AA_CONTAINER"
+fi
+systemctl daemon-reload
 %systemd_post trustee-gc-pod.service
 
 %preun

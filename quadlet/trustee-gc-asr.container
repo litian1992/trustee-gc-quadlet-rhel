@@ -19,8 +19,8 @@ Restart=on-failure
 RestartSec=10s
 
 # Startup/shutdown timeouts
-TimeoutStartSec=90s
-TimeoutStopSec=30s
+TimeoutStartSec=30s
+TimeoutStopSec=10s
 
 # Logging
 StandardOutput=journal
